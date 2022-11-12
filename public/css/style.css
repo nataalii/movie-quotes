@@ -1,0 +1,55 @@
+/* body {
+    font-family: 'Sansation';
+    margin: 0;
+ }       
+  
+ .container{
+    margin-top: 0;
+    margin-left: 0;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(78,78,78,1) 0%, rgba(61,59,59,1) 99%, rgba(61,59,59,1) 100%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ }
+  
+ .container > p, .container > a {
+    color: white;
+    font-family: 'Sansation';
+    font-size: 48px;
+    font-weight: 400;
+ }
+  
+  
+ a{
+    margin-top: 40px;
+    text-decoration: underline  white ;
+ }
+  
+  
+  
+ img{
+    width: 700px;
+ }
+  
+ .button-wrapper{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    margin: 20% 0;
+ 
+}
+button{
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   margin: 10px;
+   cursor: pointer;
+}
+ 
+button:nth-child(1){
+   background-color: transparent;
+   border: 1px solid white;
+   color: white;
+} */

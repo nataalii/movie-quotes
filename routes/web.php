@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MoviesController;
+use App\Models\Movies;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MoviesController::class, 'index']);
+
+// Route::get('movie/{movie:id}', [MoviesController::class, 'show']);
 
