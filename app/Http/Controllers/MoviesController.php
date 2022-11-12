@@ -14,9 +14,5 @@ class MoviesController extends Controller
         ]);
     }
 
-    // public function show(Movies $movie) {
-    //     return view('movie', [
-    //         'quotes' => $movie
-    //     ]);
-    // }
+
 }

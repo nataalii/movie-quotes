@@ -33,9 +33,5 @@ class DatabaseSeeder extends Seeder
             'movie_id' => $movie3->id
         ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

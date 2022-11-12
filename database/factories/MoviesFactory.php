@@ -17,7 +17,7 @@ class MoviesFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->word()
+            'title' => fake()->text($maxNbChars = 30)
         ];
     }
 }

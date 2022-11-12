@@ -17,7 +17,7 @@ class Movies extends Model
 
     public function quote()
     {
-        return $this->hasMany(Quotes::class);
+        return $this->hasMany(Quotes::class, 'movie_id');
     }
 
 
