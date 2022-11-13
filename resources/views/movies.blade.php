@@ -16,15 +16,15 @@
 
         <div class="absolute mt-6 flex right-14">
             @auth
-                <span class="text-white uppercase ml-6">Welcome,   {{ auth()->user()->name}}!</span>
+                <span class="text-white uppercase ml-6">Welcome, {{ $name->name}}!</span>
 
-                <form id="logout-form" method="POST" action="/signout"
+                <form method="POST" action="{{ route('signout') }}"
                  class="font-semibold text-blue-50 ml-6">
                     @csrf
                     <button type="submit">Sign Out</button>
                 </form>
             @else
-                <a href="/signin" class="ml-6 text-white uppercase">sign In</a>
+                <a href="{{ route('signin') }}" class="ml-6 text-white uppercase">sign In</a>
             @endauth
         </div>
         

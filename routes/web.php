@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MoviesController::class, 'index']);
+Route::get('/', [MoviesController::class, 'index'])->name('home');
 Route::get('movie/{movie:id}', [MoviesController::class, 'show']);
 
-Route::get('signin', [SessionsController::class,'create'])->middleware('guest');
-Route::post('signin', [SessionsController::class,'store'])->middleware('guest');
+Route::get('signin', [SessionsController::class,'create'])->name('signin')->middleware('guest');
+Route::post('signin', [SessionsController::class,'store'])->name('signin')->middleware('guest');
 
 
 
 
-Route::post('signout', [SessionsController::class,'destroy'])->middleware('auth');
+Route::post('signout', [SessionsController::class,'destroy'])->name('signout')->middleware('auth');
 
 
