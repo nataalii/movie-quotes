@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\SessionsController;
 use App\Models\Movies;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MoviesController::class, 'index']);
 Route::get('movie/{movie:id}', [MoviesController::class, 'show']);
+
+Route::get('signin', [SessionsController::class,'create'])->middleware('guest');
+Route::post('signin', [SessionsController::class,'store'])->middleware('guest');
+
+
+
+
+Route::post('signout', [SessionsController::class,'destroy'])->middleware('auth');
 
 
