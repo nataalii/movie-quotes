@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Movies;
 use App\Models\Quotes;
-use Illuminate\Http\Request;
 
 class MoviesController extends Controller
 {
@@ -20,7 +19,6 @@ class MoviesController extends Controller
             'movie' => $movie,
         ]);
     }
- 
  
 
 }
