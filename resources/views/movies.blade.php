@@ -13,7 +13,22 @@
             <button class="bg-transparent text-white w-12 h-12 rounded-full border-white border-solid border">en</button>
             <button class="bg-white w-12 h-12 rounded-full ">ka</button>
         </div>
-  
+
+        <div class="absolute mt-6 flex right-14">
+            @auth
+                <span class="text-white uppercase ml-6">Welcome, {{ $name->name}}!</span>
+
+                <form method="POST" action="{{ route('signout') }}"
+                 class="font-semibold text-blue-50 ml-6">
+                    @csrf
+                    <button type="submit">Sign Out</button>
+                </form>
+            @else
+                <a href="{{ route('signin') }}" class="ml-6 text-white uppercase">sign In</a>
+            @endauth
+        </div>
+        
+
         <section>
             <div class="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-matterhorn to-eclipse">
                 @foreach ($quotes as $quote)
@@ -26,7 +41,9 @@
         
             </div>
         </section>
-  
+
+        @extends('success')
+
     </body>
  
 </html>

@@ -10,13 +10,14 @@ class MoviesController extends Controller
 {
     public function index() {
         return view('movies', [
-            'quotes' => Quotes::all()->random(1)
+            'quotes' => Quotes::all()->random(1),
+            'name' => auth()->user()
         ]);
     }
 
     public function show(Movies $movie) {
         return view('movie', [
-            'movie' => $movie
+            'movie' => $movie,
         ]);
     }
  
