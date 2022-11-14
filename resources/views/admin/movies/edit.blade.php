@@ -1,7 +1,8 @@
 @extends('components.layout')
 @section('slot')
 <div class="bg-gradient-to-r from-matterhorn to-eclipse ">
-        <form method="POST" action="/admin/movies/{{ $movie->id }}" class="flex h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8 flex-col">
+            <form method="POST" action="{{ route('update_movie', $movie->id) }}" class="flex h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8 flex-col">
+
             @csrf
             @method('PATCH')
             <label for="movie" class="block text-3xl text-white">Edit a movie</label>

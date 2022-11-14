@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [MoviesController::class, 'index'])->name('home');
-Route::get('movie/{movie:id}', [MoviesController::class, 'show']);
+Route::get('movie/{movie:id}', [MoviesController::class, 'show'])->name('movie_id');
 
 Route::get('signin', [SessionsController::class,'create'])->name('signin')->middleware('guest');
 Route::post('signin', [SessionsController::class,'store'])->name('signin')->middleware('guest');

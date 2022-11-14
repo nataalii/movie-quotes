@@ -29,12 +29,14 @@
                   <tbody class="divide-y divide-gray-200 bg-white">
                         @foreach ($movie as $each )
                         <tr>
-                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                              <a href="/movie/{{ $each->id }}">{{ $each->title }}</a>
+                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-xl font-medium text-gray-900 sm:pl-6">
+                              <a href="{{ route('movie_id', $each->id )}}">{{ $each->title }}</a>
+
                             </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                              <a href="/admin/movies/{{ $each->id }}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                              <form action="/admin/movies/{{ $each->id }}" method="POST">
+                              <a href="{{ route('edit_movie', $each->id )}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                  <form action="{{ route('delete_movie', $each->id)}}" method="POST">
+
                                   @csrf
                                   @method('DELETE')
                                   <button class="text-red-600 hover:text-indigo-900 ml-3">Delete</button>

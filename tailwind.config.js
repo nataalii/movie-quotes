@@ -12,7 +12,7 @@ module.exports = {
       },
       
       fontFamily: {
-        'sansatioin': 'sansation'
+        'sansation': ['sansation', 'sans-serif']
       },
       margin: {
         '20%': '20%',
