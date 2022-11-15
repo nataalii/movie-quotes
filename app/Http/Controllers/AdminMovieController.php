@@ -29,7 +29,7 @@ class AdminMovieController extends Controller
             'title' => $attributes['title']
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('movies_index')->with('success', 'Movie added!');
 
 
     }

@@ -12,7 +12,7 @@ class AdminQuoteController extends Controller
     public function create()
     {
         return view('admin.quotes.create', [
-            'movies' => Movies::all()
+            'movies' => Movies::all(),
         ]);
     }
 
@@ -33,6 +33,41 @@ class AdminQuoteController extends Controller
             'movie_id' => $validated['movie_id'],
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('movies_index')->with('success', "Quote Added!");
     }
+
+    public function show(Movies $movie)
+    {
+        return view('admin.quotes.show', [
+            'movie' => $movie
+        ]);
+    }
+
+    public function edit(Quotes $quote)
+    {
+        return view('admin.quotes.edit', [
+            'quote' => $quote,
+            'movies' => Movies::all()
+        ]);
+    }
+
+    
+    public function update(Quotes $quote)
+    {
+        $validated = request()->validate([
+            'quote' => 'required|min:14|max:35',
+            'image' => 'image',
+            'movie_id' => ['required', Rule::exists('movies', 'id')]
+        ]);
+
+        if(isset($validated['image'])){
+            $validated['image'] = request()->file('image');
+        }
+        $quote->update($validated);
+
+        return redirect()->route('movie_quotes', $quote->movie_id)->with('success', 'Quote Updated!');
+
+    }
+
+
 }

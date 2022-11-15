@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\AdminQuoteController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\SessionsController;
-use App\Models\Movies;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,3 +29,7 @@ Route::delete('admin/movies/{movie}', [AdminMovieController::class, 'destroy'])-
 Route::get('admin/quotes/create', [AdminQuoteController::class, 'create'])->name('create_quote')->middleware('admin');
 Route::get('admin/quotes', [AdminQuoteController::class, 'index'])->name('quotes_index')->middleware('admin');
 Route::post('admin/quotes', [AdminQuoteController::class, 'store'])->name('quotes_store')->middleware('admin');
+
+Route::get('admin/movie/{movie:id}', [AdminQuoteController::class, 'show'])->name('movie_quotes')->middleware('admin');
+Route::get('admin/quotes/{quote}/edit', [AdminQuoteController::class, 'edit'])->name('edit_quote')->middleware('admin');
+Route::patch('admin/quotes/{quote}', [AdminQuoteController::class, 'update'])->name('quote_update')->middleware('admin');
