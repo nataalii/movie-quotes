@@ -48,7 +48,7 @@ class AdminMovieController extends Controller
 
         $movie->update($attributes);
 
-        return redirect()->route('movies')->with('success', 'Movie updated!');
+        return redirect()->route('movies_index')->with('success', 'Movie updated!');
 
     }
 

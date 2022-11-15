@@ -4,13 +4,16 @@
     <div class="px-4 sm:px-6 lg:px-8 w-3/5">
         <div class="sm:flex sm:items-center">
           <div class="sm:flex-auto">
-            <h1 class="text-3xl font-semibold text-gray-900">Movies</h1>
+            <h1 class="text-3xl font-semibold text-white">Movies</h1>
             <p class="mt-2 text-sm text-white">A list of all the Movies.</p>
           </div>
           <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-            <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
+            <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto mr-3">
                 <a href="{{ route('create_movie') }}">Add Movie</a>
             </button>
+            <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
+              <a href="{{ route('create_quote') }}">Add Quote</a>
+          </button>
           </div>
         </div>
         <div class="mt-8 flex flex-col">
