@@ -33,3 +33,4 @@ Route::post('admin/quotes', [AdminQuoteController::class, 'store'])->name('quote
 Route::get('admin/movie/{movie:id}', [AdminQuoteController::class, 'show'])->name('movie_quotes')->middleware('admin');
 Route::get('admin/quotes/{quote}/edit', [AdminQuoteController::class, 'edit'])->name('edit_quote')->middleware('admin');
 Route::patch('admin/quotes/{quote}', [AdminQuoteController::class, 'update'])->name('quote_update')->middleware('admin');
+Route::delete('admin/quotes/{quote}', [AdminQuoteController::class, 'destroy'])->name('delete_quote')->middleware('admin');

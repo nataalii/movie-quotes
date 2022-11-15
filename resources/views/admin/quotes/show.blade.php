@@ -42,10 +42,17 @@
                     </td>
 
                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                      <a href="{{ route('edit_quote', $quote->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
+                      <a href="{{ route('edit_quote', $quote->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                     </td>
                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                      <a href="#" class="text-red-600 hover:text-red-900">Delete<span class="sr-only">, Lindsay Walton</span></a>
+                        <form action="{{ route('delete_quote', $quote->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button class="text-red-600 hover:text-red-900">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                   </tr>                    
                     

@@ -66,7 +66,13 @@ class AdminQuoteController extends Controller
         $quote->update($validated);
 
         return redirect()->route('movie_quotes', $quote->movie_id)->with('success', 'Quote Updated!');
+    }
 
+
+    public function destroy(Quotes $quote)
+    {
+        $quote->delete();
+        return back()->with('success', 'Quote Deleted!');
     }
 
 
