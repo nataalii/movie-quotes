@@ -69,5 +69,11 @@ class AdminQuoteController extends Controller
 
     }
 
+    public function destroy(Quotes $quote)
+    {
+        $quote->delete();
+        return back()->with('success', 'Quote Deleted!');
+    }
+
 
 }
