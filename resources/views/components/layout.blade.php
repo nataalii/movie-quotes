@@ -10,7 +10,7 @@
 </head>
 
 
-<body class=" h-screen  bg-gradient-radial from-matterhorn via-eclipse to-eclipse">
+<body class=" h-screen  bg-gradient-radial from-matterhorn via-eclipse to-eclipse font-sansation">
         <div class="flex flex-col fixed mt-23% space-y-3 ml-4 ">
         <button class="bg-transparent text-white w-12 h-12 rounded-full border-white border-solid border">en</button>
         <button class="bg-white w-12 h-12 rounded-full ">ka</button>

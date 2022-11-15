@@ -7,7 +7,7 @@
 
                 @foreach ($movie->quote as $quote ) 
                 <div class="mt-20 border-solid border-black border-1px rounded-xl">
-                    <img src="/{{ $quote->image }}"  alt="movie-image" class="rounded-t-lg h-96 w-3xl" >
+                    <img src="{{ $quote->image }}"  alt="movie-image" class="rounded-t-lg h-96 w-700px" >
                     <div class="bg-white h-28 -mt-5 rounded-b-lg">
                         <h2 class="text-4xl p-10 relative">"{{ $quote->quote }}"</h2>
                     </div>
