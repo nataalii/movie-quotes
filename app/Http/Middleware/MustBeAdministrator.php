@@ -19,7 +19,8 @@ class MustBeAdministrator
      */
     public function handle(Request $request, Closure $next)
     {
-        $isAuthenticatedAdmin = (Auth::check());
+        $isAuthenticatedAdmin = Auth::check();
+        
         if(!$isAuthenticatedAdmin){
             abort(Response::HTTP_FORBIDDEN);
         }

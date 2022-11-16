@@ -1,7 +1,9 @@
 @extends('components.layout')
 @section('slot')
+<x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en']) }}"
+  georgian="{{ route(Route::currentRouteName(),[ 'ka'])}}"/>
 <div class="flex items-center justify-center h-screen">
-    <form method="POST" action="{{ route('quotes_store') }}" enctype="multipart/form-data" class="space-y-8 divide-y divide-gray-200 w-1/3 bg-white rounded-xl">
+    <form method="POST" action="{{ route('quotes_store', app()->getLocale()) }}" enctype="multipart/form-data" class="space-y-8 divide-y divide-gray-200 w-1/3 bg-white rounded-xl">
         @csrf
         <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5 p-10">
           <div class="space-y-6 sm:space-y-5">
@@ -14,14 +16,16 @@
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">{{ __('Quote') }}</label>
                     <div class="mt-1 sm:col-span-2 sm:mt ">
-                      <input id="quote" name="quote" value="{{ old('quote') }}" type="quote" autocomplete="quote" class="block bg-gray-100  p-3 w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                      <input id="quote" name="quote_ka" value="{{ old('quote_ka') }}" type="quote"  placeholder="{{ __('Quotes in Georgian') }}" class="block bg-gray-100  p-3 w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                      @error('quote_ka')
+                        <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
+                       @enderror
+                      <input id="quote" name="quote_en" value="{{ old('quote_en') }}" type="quote"  placeholder="{{ __('Quotes in English') }}" class="block bg-gray-100  p-3 w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm mt-6">
+                      @error('quote_en')
+                        <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
+                       @enderror
                     </div>
                 </div>
-                @error('quote')
-                    <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
-                @enderror
-
-    
       
               <div class="sm:grid sm:grid-cols-1 sm:items-start sm:gap-5 sm:border-t sm:border-gray-200 sm:pt-5">
                 <label for="cover-photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">{{ __('Upload Image') }}</label>

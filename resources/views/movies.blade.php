@@ -1,5 +1,6 @@
 @extends('components.layout')
 @section('slot')
+        <x-lan-buttons english="en" georgian="ka"/>
        <section>
            <div class="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-matterhorn to-eclipse">
                @foreach ($quotes as $quote)
@@ -8,7 +9,7 @@
                </div>
                <p class="font-normal text-5xl text-white mt-16">"{{ $quote->quote }}"</p>
                    <a class="font-normal text-5xl text-white mt-24 underline"
-                       href="{{ route('movie_id', $quote->movie->id) }}">{{ $quote->movie->title }}
+                       href="{{ route('movie_id', [app()->getLocale(), $quote->movie->id]) }}">{{ $quote->movie->title }}
                    </a> 
                @endforeach
       

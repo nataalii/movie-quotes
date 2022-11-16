@@ -1,5 +1,8 @@
 @extends('components.layout')
 @section('slot')
+  <x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en', $movie->id]) }}"
+    georgian="{{ route(Route::currentRouteName(),[ 'ka', $movie->id])}}"/>
+
    <section>
        <div class="flex flex-col justify-center items-center">
            <div class="my-20 w-3xl">

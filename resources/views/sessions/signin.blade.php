@@ -1,6 +1,6 @@
 @vite('resources/css/app.css')
 <!DOCTYPE html>
-<html lang="en"  class="h-full bg-white">
+<html lang="en"  class="h-full bg-gray-300">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body class="h-full">
+    <x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en']) }}"
+    georgian="{{ route(Route::currentRouteName(),[ 'ka'])}}" />
+
     <div class="flex min-h-full">
         <div class="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div class="mx-auto w-full max-w-sm lg:w-96">
@@ -66,7 +69,7 @@
               </div>
       
               <div class="mt-6">
-                <form action="/signin" method="POST" class="space-y-6">
+                <form action="{{ route('signin_post', app()->getLocale()) }}" method="POST" class="space-y-6">
                   @csrf
                   <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 ">{{ __('Email address') }}</label>

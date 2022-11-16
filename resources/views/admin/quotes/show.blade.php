@@ -1,5 +1,7 @@
 @extends('components.layout')
 @section('slot')
+<x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en', $movie->id]) }}"
+  georgian="{{ route(Route::currentRouteName(),[ 'ka', $movie->id])}}"/>
 <div class="px-4 sm:px-6 lg:px-8 w-3/5 m-auto p-24">
    <div class="sm:flex sm:items-center">
      <div class="sm:flex-auto">
@@ -9,7 +11,7 @@
      <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
        <button type="button"
        class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
-           <a href="{{ route('create_quote') }}">{{ __('Add Quote') }}</a>
+           <a href="{{ route('create_quote', app()->getLocale()) }}">{{ __('Add Quote') }}</a>
        </button>
      </div>
    </div>
@@ -42,10 +44,10 @@
                    </td>
  
                    <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-lg font-medium sm:pr-6">
-                     <a href="{{ route('edit_quote', $quote->id) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
+                     <a href="{{ route('edit_quote', [app()->getLocale(), $quote->id]) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
                    </td>
                    <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-lg font-medium sm:pr-6">
-                       <form action="{{ route('delete_quote', $quote->id) }}" method="POST">
+                       <form action="{{ route('delete_quote', [app()->getLocale(), $quote->id]) }}" method="POST">
                            @csrf
                            @method('DELETE')
  

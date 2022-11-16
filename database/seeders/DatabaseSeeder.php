@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
            'movie_id' => $movie4->id,
            'quote' => [
                 'en' => "Without pain, we would have nothing",
-                'ka' => 'ტკივილისა გარეშე არაფერი გვექნებოდა'
+                'ka' => 'ტკივილის გარეშე არაფერი გვექნებოდა'
             ],       
        ]);
  

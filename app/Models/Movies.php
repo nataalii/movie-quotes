@@ -19,7 +19,6 @@ class Movies extends Model
 
     public $translatable = ['title'];
 
-    
 
 
     public function quote()
@@ -29,9 +28,3 @@ class Movies extends Model
 
 
 }
-
-// $movieItem = new Movies();
-// $movieItem
-//     ->setTranslation('title', 'en', 'natalia')
-//     ->setTranslation('title', 'nl', 'ნატალია')
-//     ->save();
