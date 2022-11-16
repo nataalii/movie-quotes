@@ -20,7 +20,7 @@ class AdminQuoteController extends Controller
    {
  
        $validated = request()->validate([
-           'quote' => 'required|min:14|max:45',
+           'quote' => 'required|min:14|max:36',
            'image' => 'required|image',
            'movie_id' => ['required', Rule::exists('movies', 'id')]
        ]);
@@ -55,7 +55,7 @@ class AdminQuoteController extends Controller
    public function update(Quotes $quote)
    {
        $validated = request()->validate([
-           'quote' => 'required|min:14|max:45',
+           'quote' => 'required|min:14|max:36',
            'image' => 'image',
            'movie_id' => ['required', Rule::exists('movies', 'id')]
        ]);

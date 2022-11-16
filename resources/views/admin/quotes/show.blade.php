@@ -3,13 +3,13 @@
 <div class="px-4 sm:px-6 lg:px-8 w-3/5 m-auto p-24">
    <div class="sm:flex sm:items-center">
      <div class="sm:flex-auto">
-       <h1 class="text-3xl font-semibold text-white">Quotes</h1>
-       <p class="mt-4 text-sm text-white">A list of all the quotes from "{{ $movie->title }}"</p>
+       <h1 class="text-3xl font-semibold text-white">{{ __('Quotes') }}</h1>
+       <p class="mt-4 text-sm text-white">{{ __('A list of all the quotes from') }} "{{ $movie->title }}"</p>
      </div>
      <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
        <button type="button"
        class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
-           <a href="{{ route('create_quote') }}">Add Quote</a>
+           <a href="{{ route('create_quote') }}">{{ __('Add Quote') }}</a>
        </button>
      </div>
    </div>
@@ -20,7 +20,7 @@
            <table class="min-w-full divide-y divide-gray-300">
              <thead class="bg-gray-50">
                <tr>
-                 <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Quote</th>
+                 <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">{{ __('Quote') }}</th>
                  <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                  <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                        <span class="sr-only">Edit</span>
@@ -36,13 +36,13 @@
                          <img class=" h-24 w-36 rounded-lg object-cover" src="/{{ $quote->image }}" alt="">
                        </div>
                        <div class="ml-4">
-                         <div class=" text-2xl text-gray-900">{{ $quote->quote }}</div>
+                         <div class=" text-2xl text-gray-900">"{{ $quote->quote }}"</div>
                        </div>
                      </div>
                    </td>
  
                    <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-lg font-medium sm:pr-6">
-                     <a href="{{ route('edit_quote', $quote->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                     <a href="{{ route('edit_quote', $quote->id) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
                    </td>
                    <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-lg font-medium sm:pr-6">
                        <form action="{{ route('delete_quote', $quote->id) }}" method="POST">
@@ -50,7 +50,7 @@
                            @method('DELETE')
  
                            <button class="text-red-600 hover:text-red-900">
-                               Delete
+                               {{ __('Delete') }}
                            </button>
                        </form>
                    </td>
