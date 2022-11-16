@@ -13,6 +13,7 @@ class QuotesFactory extends Factory
     {
         return [
             'movie_id' => Movies::factory(),
+            'image' => fake()->imageUrl( 700, 420, 'movies'),
             'quote' => $this->faker->text($maxNbChars = 30)
         ];
     }

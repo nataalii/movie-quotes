@@ -30,6 +30,16 @@ module.exports = {
 
       
     },
+
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+    
+    backgroundImage: {
+      'gradient-radial': 'radial-gradient(90% 90% at 50% 50%, var(--tw-gradient-stops))',
+    }
+
   },
 
 

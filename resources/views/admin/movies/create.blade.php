@@ -1,7 +1,7 @@
 @extends('components.layout')
 @section('slot')
 <div class="bg-gradient-to-r from-matterhorn to-eclipse ">
-        <form method="POST" action="{{ route('movies') }}" class="flex h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8 flex-col">
+        <form method="POST" action="{{ route('movies_store') }}" class="flex h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8 flex-col">
             @csrf
             <label for="movie" class="block text-3xl text-white">Add a movie</label>
             <div class="mt-5">

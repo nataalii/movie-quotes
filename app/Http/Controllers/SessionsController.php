@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
