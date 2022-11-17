@@ -3,7 +3,7 @@
 <x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en', $quote->id]) }}"
   georgian="{{ route(Route::currentRouteName(),[ 'ka', $quote->id])}}"/>
 <div class="flex items-center justify-center h-screen">
-    <form method="POST" action="{{ route('quote_update', [app()->getLocale(), $quote->id]) }}" enctype="multipart/form-data" class="space-y-8 divide-y divide-gray-200 w-1/3 bg-white rounded-xl">
+    <form method="POST" action="{{ route('quote.update', [app()->getLocale(), $quote->id]) }}" enctype="multipart/form-data" class="space-y-8 divide-y divide-gray-200 w-1/3 bg-white rounded-xl">
         @csrf
         @method('patch')
         <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5 p-10">
@@ -18,14 +18,12 @@
                   
                     <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">{{ __('Quote') }}</label>
                     <div class="mt-1 sm:col-span-2 sm:mt ">
-                      <input id="quote" name="quote_ka" value="{{$quote->translate('quote', 'ka')}}" type="quote"  placeholder="{{ __('Quotes in Georgian') }}" class="block bg-gray-100  p-3 w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                      @error('quote_ka')
-                        <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
-                       @enderror
-                      <input id="quote" name="quote_en" value="{{$quote->translate('quote', 'en')}}" type="quote"  placeholder="{{ __('Quotes in English') }}" class="block bg-gray-100  p-3 w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm mt-6">
-                      @error('quote_en')
-                        <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
-                       @enderror
+                      <input id="quote" name="quote_ka" value="{{$quote->getTranslation('quote', 'ka')}}" type="quote"  placeholder="{{ __('Quotes in Georgian') }}" class="block bg-gray-100  p-3 w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                      <x-error name="quote_ka"/>
+
+                      <input id="quote" name="quote_en" value="{{$quote->getTranslation('quote', 'en')}}" type="quote"  placeholder="{{ __('Quotes in English') }}" class="block bg-gray-100  p-3 w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm mt-6">
+                      <x-error name="quote_en"/>
+
                     </div>
                 </div>
       
@@ -40,9 +38,8 @@
                 </div>
 
                 
-                @error('image')
-                    <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
-                @enderror
+                <x-error name="quote_image"/>
+
               </div>
             </div>
           </div>
@@ -62,10 +59,7 @@
                   </select>
                 </div>
                </div>
-               @error('movie')
-                    <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
-                @enderror
-    
+               <x-error name="quote_movie"/>
             </div>
           
         </div>
