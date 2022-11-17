@@ -8,15 +8,16 @@ use Spatie\Translatable\HasTranslations;
 
 class Quotes extends Model
 {
-    use HasFactory;
-    use HasTranslations;
+	use HasFactory;
 
-    protected $guarded = [];
-    public $translatable = ['quote'];
+	use HasTranslations;
 
+	protected $guarded = [];
 
-    public function movie()
-    {
-        return $this->belongsTo(Movies::class);
-    }
+	public $translatable = ['quote'];
+
+	public function movie()
+	{
+		return $this->belongsTo(Movies::class);
+	}
 }

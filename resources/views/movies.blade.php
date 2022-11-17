@@ -9,7 +9,7 @@
                </div>
                <p class="font-normal text-5xl text-white mt-16">"{{ $quote->quote }}"</p>
                    <a class="font-normal text-5xl text-white mt-24 underline"
-                       href="{{ route('movie_id', [app()->getLocale(), $quote->movie->id]) }}">{{ $quote->movie->title }}
+                       href="{{ route('movie.id', [app()->getLocale(), $quote->movie->id]) }}">{{ $quote->movie->title }}
                    </a> 
                @endforeach
       

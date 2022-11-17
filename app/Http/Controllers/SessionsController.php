@@ -2,40 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\User\StoreUserRequest;
 use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
 {
-    public function create()
-    {
-        return view('sessions.signin');
-    }
+	public function create()
+	{
+		return view('sessions.signin');
+	}
 
-    public function store(StoreUserRequest $request)
-    {
-        $validated = $request->validated();
+	public function store(StoreUserRequest $request)
+	{
+		if (auth()->attempt($request->validated()))
+		{
+			session()->regenerate();
 
+			return redirect()->route('home', app()->getLocale())->with('success', __('Welcome Back!'));
+		}
 
-        if(auth()->attempt($validated)) {
-            session()->regenerate();
+		throw ValidationException::withMessages([
+			'email'    => __('Enter Valid Email'),
+			'password' => __('Enter Valid Password'),
+		]);
+	}
 
-            return redirect()->route('home', app()->getLocale())->with('success', 'Welcome Back!');
-        };
+	public function destroy()
+	{
+		auth()->logout();
 
-        
-        throw ValidationException::withMessages([
-            'email' => 'Enter Valid Email',
-            'password' => 'Enter Valid Password'
-        ]);
-
-    }
-
-    public function destroy()
-    {
-        auth()->logout();
-
-        return redirect()->route('home', app()->getLocale())->with('success', 'Goodbye!');
-    }
-
+		return redirect()->route('home', app()->getLocale())->with('success', __('Goodbye!'));
+	}
 }

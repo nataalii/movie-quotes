@@ -1,14 +1,14 @@
 <?php
- 
+
 namespace Database\Factories;
- 
+
 use Illuminate\Database\Eloquent\Factories\Factory;
- 
+
 class MoviesFactory extends Factory
 {
-   public function definition()
-   {
-       return [
-       ];
-   }
+	public function definition()
+	{
+		return [
+		];
+	}
 }

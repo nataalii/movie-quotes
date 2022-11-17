@@ -33,7 +33,19 @@
     "title in georgian": "სათაური ქართულად",
     "title in english": "სათაური ინგლისურად",
     "Quotes in English": "ციტატა ინგლისურად",
-    "Quotes in Georgian": "ციტატა ქართულად"
+    "Quotes in Georgian": "ციტატა ქართულად",
+    "email": "იმეილი",
+    "Enter Valid Password": "შეიყვანეთ ვალიდური პაროლი",
+    "Enter Valid Email": "შეიყვანეთ ვალიდური მეილი",
+    "Movie Deleted": "ფილმი წაიშალა!",
+    "Welcome Back!": "კეთილი იყოს შენი დაბრუნება!",
+    "Goodbye!": "ნახვამდის!",
+    "Quote Added!": "ციტატა დამატებულია!",
+    "Quote Updated!": "ციტატა განახლებულია!",
+    "Movie Added!": "ფილმი დაემატა!",
+    "Movie Updated!": "ფილმი განახლებულია",
+    "Quote Deleted!": "ციტატა წაშლილია!",
+    "Movie Deleted!": "ფილმი წაშლილია!"
     
 
 }
