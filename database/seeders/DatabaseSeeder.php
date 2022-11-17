@@ -74,6 +74,14 @@ class DatabaseSeeder extends Seeder
             ],       
        ]);
  
+       Quotes::create([
+        'image' => 'images/guardians.jpg',
+        'movie_id' => $movie2->id,
+        'quote' => [
+             'en' => "I don’t learn. One of my issues.",
+             'ka' => 'შეცდომებზე ვერ ვსწავლობ'
+         ],       
+        ]);
  
        Quotes::create([
            'image' => 'images/interstellar.jpeg',
