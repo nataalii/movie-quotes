@@ -20,7 +20,7 @@ class SessionsController extends Controller
         if(auth()->attempt($validated)) {
             session()->regenerate();
 
-            return redirect()->route('home')->with('success', 'Welcome Back!');
+            return redirect()->route('home', app()->getLocale())->with('success', 'Welcome Back!');
         };
 
         
@@ -35,7 +35,7 @@ class SessionsController extends Controller
     {
         auth()->logout();
 
-        return redirect()->route('home')->with('success', 'Goodbye!');
+        return redirect()->route('home', app()->getLocale())->with('success', 'Goodbye!');
     }
 
 }

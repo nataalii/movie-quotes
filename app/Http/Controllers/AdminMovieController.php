@@ -22,37 +22,47 @@ class AdminMovieController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'title' => 'required|min:2'
+            'title_ka' => 'required|min:2',
+            'title_en' => 'required|min:2'
         ]);
 
         Movies::create([
-            'title' => $attributes['title']
+            'title' => [
+                'en' =>$attributes['title_en'],
+                'ka' =>$attributes['title_ka'],
+             ],
         ]);
 
-        return redirect()->route('movies_index')->with('success', 'Movie added!');
+        return redirect()->route('movies_index', app()->getLocale())->with('success', 'Movie added!');
 
 
     }
 
-    public function edit(Movies $movie)
+    public function edit($local, Movies $movie)
     {
         return view('admin.movies.edit', [
             'movie' => $movie
         ]);
     }
 
-    public function update(Movies $movie){
+    public function update($local, Movies $movie){
         $attributes = request()->validate([
-            'title' => 'required|min:2'
+            'title_ka' => 'required|min:2',
+            'title_en' => 'required|min:2'
         ]);
 
-        $movie->update($attributes);
+        $movie->update([
+            'title' => [
+                'en' =>$attributes['title_en'],
+                'ka' =>$attributes['title_ka'],
+             ],
+        ]);
 
-        return redirect()->route('movies_index')->with('success', 'Movie updated!');
+        return redirect()->route('movies_index', app()->getLocale())->with('success', 'Movie updated!');
 
     }
 
-    public function destroy(Movies $movie)
+    public function destroy($local, Movies $movie)
     {
         $movie->delete();
 

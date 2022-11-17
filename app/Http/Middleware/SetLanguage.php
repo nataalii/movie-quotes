@@ -4,11 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\App;
 
-
-class MustBeAdministrator
+class SetLanguage
 {
     /**
      * Handle an incoming request.
@@ -19,11 +17,8 @@ class MustBeAdministrator
      */
     public function handle(Request $request, Closure $next)
     {
-        $isAuthenticatedAdmin = Auth::check();
-        
-        if(!$isAuthenticatedAdmin){
-            abort(Response::HTTP_FORBIDDEN);
-        }
+        App::setLocale($request->language);
+
         return $next($request);
     }
 }

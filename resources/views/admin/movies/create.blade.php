@@ -1,18 +1,27 @@
 @extends('components.layout')
 @section('slot')
+<x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en']) }}"
+  georgian="{{ route(Route::currentRouteName(),[ 'ka'])}}"/>
+  
 <div class="bg-gradient-to-r from-matterhorn to-eclipse ">
-        <form method="POST" action="{{ route('movies_store') }}" class="flex h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8 flex-col">
+        <form method="POST" action="{{ route('movies_store', app()->getLocale()) }}" class="flex h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8 flex-col">
             @csrf
-            <label for="movie" class="block text-3xl text-white">Add a movie</label>
+            <label for="movie" class="block text-3xl text-white">{{ __('Add a movie') }}</label>
             <div class="mt-5">
-              <input id="movie" name="title" required class="block w-full h-11 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3" placeholder="movie">
+              <input id="movie" name="title_en" required class="block w-full h-11 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3" placeholder="{{ __('title in english') }}">
             </div>
+            @error('title')
+            <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
+            @enderror
+            <div class="mt-5">
+                <input id="movie" name="title_ka" required class="block w-full h-11 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3" placeholder="{{ __('title in georgian') }}">
+              </div>
             @error('title')
                 <p class="text-red-400 text-xs mt-2">{{ $message }}</p>  
             @enderror
         
             <div>
-                <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 mt-6 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add </button>
+                <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 mt-6 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">{{ __('Add') }} </button>
             </div>
         </form>
 

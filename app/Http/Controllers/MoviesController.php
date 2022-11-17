@@ -14,8 +14,9 @@ class MoviesController extends Controller
         ]);
     }
 
-    public function show(Movies $movie) {
+    public function show($local, Movies $movie) {
         return view('movie', [
+            $local => app()->getLocale(),
             'movie' => $movie,
         ]);
     }
