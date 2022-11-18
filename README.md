@@ -5,16 +5,16 @@ Movie Quotes application is a web platform where you can see quotes randomly. Af
 #
 ### Prerequisites
 
-* PHP@7.2 and up
+* PHP@8.1 and up
 * MYSQL@8 and up*
-* npm@6 and up*
+* npm@8 and up*
 * composer@2 and up*
 
 
 #
 ### Tech Stack
 
-* [Laravel@6.x](https://laravel.com/docs/6.x) - back-end framework
+* [Laravel@9.x](https://laravel.com/docs/9.x) - back-end framework
 * [Spatie Translatable](https://github.com/spatie/laravel-translatable) - package for translation
 * [TailwinUI] (https://tailwindui.com/) - for design
 
