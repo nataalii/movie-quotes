@@ -33,15 +33,11 @@
                 <label for="cover-photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">{{ __('Upload Image') }}</label>
                 <div class="flex text-sm text-gray-600 justify-between">
                   <label for="image" class="relative cursor-pointer rounded-md bg-white font-medium  text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
-                    <input id="image" name="image" type="file" class="">
+                    <input id="image" name="image" type="file">
                   </label>
                   <img src="/{{ $quote->image }}" alt="image " class="rounded-xl" width="100">
-
                 </div>
-
-                
-                <x-error name="quote_image"/>
-
+                <x-error name="image"/>
               </div>
             </div>
           </div>

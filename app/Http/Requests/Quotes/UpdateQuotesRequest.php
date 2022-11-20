@@ -12,7 +12,7 @@ class UpdateQuotesRequest extends FormRequest
 		return [
 			'quote_ka' => 'required|min:12|max:36',
 			'quote_en' => 'required|min:10|max:36',
-			'image'    => 'image',
+			'image'    => 'image|required',
 			'movie_id' => ['required', Rule::exists('movies', 'id')],
 		];
 	}
