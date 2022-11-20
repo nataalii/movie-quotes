@@ -2,8 +2,10 @@
 @section('slot')
 <x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en', $quote->id]) }}"
   georgian="{{ route(Route::currentRouteName(),[ 'ka', $quote->id])}}"/>
-<div class="flex items-center justify-center h-screen">
-    <form method="POST" action="{{ route('quote.update', [app()->getLocale(), $quote->id]) }}" enctype="multipart/form-data" class="space-y-8 divide-y divide-gray-200 w-1/3 bg-white rounded-xl">
+
+<x-dashboard>
+  <div class="flex items-center justify-center h-full">
+    <form method="POST" action="{{ route('quote.update', [app()->getLocale(), $quote->id]) }}" enctype="multipart/form-data" class="space-y-8 divide-y divide-gray-200 w-3/5 bg-white rounded-xl">
         @csrf
         @method('patch')
         <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5 p-10">
@@ -68,6 +70,9 @@
             <button type="submit" class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">{{ __('Update') }}</button>
         </div>
       </form>
-</div>
+  </div>
+
+</x-dashboard> 
+
 
 @endsection
