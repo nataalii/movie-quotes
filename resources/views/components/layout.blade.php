@@ -13,7 +13,7 @@
 <body class=" h-screen  bg-gradient-radial from-matterhorn via-eclipse to-eclipse font-sansation">
    <div class="text-white uppercase absolute mt-6 flex right-14">
        @auth
-           <a href="{{ route('home', app()->getLocale()) }}" class="mx-6">{{ __('Welcome')  }}!</a>
+           <a href="{{ route('home', app()->getLocale()) }}" class="mx-6">{{ __('Home page')  }}</a>
            <a href="{{ route('movies.index', app()->getLocale()) }}">{{ __('See All Movies') }}</a>
  
  

@@ -18,7 +18,7 @@ class SessionsController extends Controller
 		{
 			session()->regenerate();
 
-			return redirect()->route('home', app()->getLocale())->with('success', __('Welcome Back!'));
+			return redirect()->route('movies.store', app()->getLocale())->with('success', __('Welcome Back!'));
 		}
 
 		throw ValidationException::withMessages([

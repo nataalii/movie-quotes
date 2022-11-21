@@ -62,6 +62,7 @@ class AdminQuoteController extends Controller
 				'en' => $validated['quote_en'],
 				'ka' => $validated['quote_ka'],
 			],
+			'image' => $request->file('image')->store('images'),
 			'movie_id' => $validated['movie_id'],
 		]);
 
