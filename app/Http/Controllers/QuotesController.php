@@ -2,6 +2,6 @@
 
 namespace App\Http\Controllers;
 
-class QuotesController extends Controller
+class QuoteController extends Controller
 {
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Movies extends Model
+class Movie extends Model
 {
 	use HasFactory;
 
@@ -19,6 +19,6 @@ class Movies extends Model
 
 	public function quote()
 	{
-		return $this->hasMany(Quotes::class, 'movie_id');
+		return $this->hasMany(Quote::class, 'movie_id');
 	}
 }
