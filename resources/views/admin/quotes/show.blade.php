@@ -7,7 +7,7 @@
     <div class="sm:px-6 lg:px-8 absolute p-16 w-7/12 -mx-16">
       <div class="sm:flex sm:items-center">
         <div class="sm:flex-auto">
-          <p class="mt-4 text-sm text-white">{{ __('A list of all the quotes from') }} "{{ $movie->title }}"</p>
+          <p class="mt-4 text-sm text-white">{{ __('text.movie_list') }} "{{ $movie->title }}"</p>
         </div>
       </div>
       <div class="mt-8 flex flex-col">
@@ -17,7 +17,7 @@
               <table class="min-w-full divide-y divide-gray-300">
                 <thead class="bg-gray-50">
                   <tr>
-                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">{{ __('Quote') }}</th>
+                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">{{ __('text.quote') }}</th>
                     <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                     <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                           <span class="sr-only">Edit</span>
@@ -39,7 +39,7 @@
                       </td>
     
                       <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-lg font-medium sm:pr-6">
-                        <a href="{{ route('edit.quote', [app()->getLocale(), $quote->id]) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
+                        <a href="{{ route('edit.quote', [app()->getLocale(), $quote->id]) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('text.edit') }}</a>
                       </td>
                       <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-lg font-medium sm:pr-6">
                           <form action="{{ route('delete.quote', [app()->getLocale(), $quote->id]) }}" method="POST">
@@ -47,7 +47,7 @@
                               @method('DELETE')
     
                               <button class="text-red-600 hover:text-red-900">
-                                  {{ __('Delete') }}
+                                  {{ __('text.delete') }}
                               </button>
                           </form>
                       </td>

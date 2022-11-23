@@ -7,7 +7,7 @@
         @else
              bg-white 
         @endif ">
-        <a href="{{ $english }}">{{ __('en') }}</a>
+        <a href="{{ $english }}">{{ __('text.en') }}</a>
     </button>
 
     <button class=" w-12 h-12 rounded-full
@@ -16,6 +16,6 @@
         @else
             bg-transparent text-white border-white border-solid border
         @endif ">
-        <a href="{{ $georgian }}">{{ __('ka')}}</a>
+        <a href="{{ $georgian }}">{{ __('text.ka')}}</a>
     </button>
 </div>
