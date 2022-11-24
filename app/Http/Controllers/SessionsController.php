@@ -7,11 +7,6 @@ use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
 {
-	public function create()
-	{
-		return view('sessions.signin');
-	}
-
 	public function store(StoreUserRequest $request)
 	{
 		if (auth()->attempt($request->validated()))

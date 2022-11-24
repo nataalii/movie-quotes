@@ -12,7 +12,7 @@ Route::group(['prefix' => '{language}'], function () {
 	Route::get('/', [MovieController::class, 'index'])->name('home');
 	Route::get('movie/{movie:id}', [MovieController::class, 'show'])->name('movie.id');
 
-	Route::get('signin', [SessionsController::class, 'create'])->name('signin')->middleware('guest');
+	Route::view('signin', 'sessions.signin')->name('signin')->middleware('guest');
 	Route::post('signin', [SessionsController::class, 'store'])->name('signin.post')->middleware('guest');
 
 	Route::post('signout', [SessionsController::class, 'destroy'])->name('signout')->middleware('auth');
@@ -21,7 +21,7 @@ Route::group(['prefix' => '{language}'], function () {
 // Admnin
 
 Route::group(['prefix' => '{language}/admin', 'middleware' => 'admin'], function () {
-	Route::get('movies/create', [AdminMovieController::class, 'create'])->name('create.movie');
+	Route::view('movies/create', 'admin.movies.create')->name('create.movie');
 	Route::post('/movies', [AdminMovieController::class, 'store'])->name('movies.store');
 
 	Route::get('movies', [AdminMovieController::class, 'index'])->name('movies.index');
