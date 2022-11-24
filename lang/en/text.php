@@ -6,7 +6,7 @@ return [
 	'welcome'                               => 'Welcome',
 	'see_all_movies'                        => 'See All Movies',
 	'sign_out'                              => 'Sign Out',
-	'sign_in'                               => 'Sign_in',
+	'sign_in'                               => 'Sign in',
 	'en'                                    => 'en',
 	'ka'                                    => 'ka',
 	'sign_in_to_your_account'               => 'Sign in to your account',
