@@ -2,15 +2,15 @@
 
 use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\AdminQuoteController;
-use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function () {
-	Route::get('/', [MoviesController::class, 'index'])->name('home');
-	Route::get('movie/{movie:id}', [MoviesController::class, 'show'])->name('movie.id');
+	Route::get('/', [MovieController::class, 'index'])->name('home');
+	Route::get('movie/{movie:id}', [MovieController::class, 'show'])->name('movie.id');
 
 	Route::get('signin', [SessionsController::class, 'create'])->name('signin')->middleware('guest');
 	Route::post('signin', [SessionsController::class, 'store'])->name('signin.post')->middleware('guest');
