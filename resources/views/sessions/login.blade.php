@@ -47,7 +47,7 @@
               </div>
       
               <div class="mt-6">
-                <form action="{{ route('signin.post', app()->getLocale()) }}" method="POST" class="space-y-6">
+                <form action="{{ route('login.post', app()->getLocale()) }}" method="POST" class="space-y-6">
                   @csrf
                   <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 ">{{ __('text.email_address') }}</label>

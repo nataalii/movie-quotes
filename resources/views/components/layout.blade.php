@@ -17,14 +17,14 @@
            <a href="{{ route('movies.index', app()->getLocale()) }}">{{ __('text.see_all_movies') }}</a>
  
  
-           <form method="POST" action="{{ route('signout', app()->getLocale()) }}"
+           <form method="POST" action="{{ route('logout', app()->getLocale()) }}"
             class="font-semibold text-blue-50 ml-6">
                @csrf
                <button type="submit">{{ __('text.sign_out') }}</button>
            </form>
  
        @else
-           <a href="{{ route('signin', app()->getLocale()) }}" class="ml-6 text-white uppercase">{{ __('text.sign_in') }}</a>
+           <a href="{{ route('login', app()->getLocale()) }}" class="ml-6 text-white uppercase">{{ __('text.sign_in') }}</a>
        @endauth
    </div>
  
