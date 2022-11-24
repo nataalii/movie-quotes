@@ -1,5 +1,3 @@
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
 @if (session()->has('success'))
 <div x-data="{ show: true }"
     x-init="setTimeout(() => show = false, 3000)"
