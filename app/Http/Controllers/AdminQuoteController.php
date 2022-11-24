@@ -30,7 +30,7 @@ class AdminQuoteController extends Controller
 			'movie_id' => $validated['movie_id'],
 		]);
 
-		return redirect()->route('movies.index', app()->getLocale())->with('success', __('Quote Added!'));
+		return redirect()->route('movies.index', app()->getLocale())->with('success', __('text.quote_added!'));
 	}
 
 	public function show($local, Movie $movie)
@@ -66,13 +66,13 @@ class AdminQuoteController extends Controller
 			'movie_id' => $validated['movie_id'],
 		]);
 
-		return redirect()->route('movie.quotes', [app()->getLocale(), $quote->movie_id])->with('success', __('Quote Updated!'));
+		return redirect()->route('movie.quotes', [app()->getLocale(), $quote->movie_id])->with('success', __('text.quote_updated!'));
 	}
 
 	public function destroy($local, Quote $quote)
 	{
 		$quote->delete();
 
-		return back()->with('success', __('Quote Deleted!'));
+		return back()->with('success', __('text.quote_deleted!'));
 	}
 }

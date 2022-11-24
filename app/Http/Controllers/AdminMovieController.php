@@ -25,7 +25,7 @@ class AdminMovieController extends Controller
 			],
 		]);
 
-		return redirect()->route('movies.index', app()->getLocale())->with('success', __('Movie Added!'));
+		return redirect()->route('movies.index', app()->getLocale())->with('success', __('text.movie_added!'));
 	}
 
 	public function edit($local, Movie $movie)
@@ -46,13 +46,13 @@ class AdminMovieController extends Controller
 			],
 		]);
 
-		return redirect()->route('movies.index', app()->getLocale())->with('success', __('Movie Updated!'));
+		return redirect()->route('movies.index', app()->getLocale())->with('success', __('text.movie_updated!'));
 	}
 
 	public function destroy($local, Movie $movie)
 	{
 		$movie->delete();
 
-		return back()->with('success', __('Movie Deleted!'));
+		return back()->with('success', __('text.movie_deleted!'));
 	}
 }
