@@ -13,18 +13,18 @@
 <body class=" h-screen  bg-gradient-radial from-matterhorn via-eclipse to-eclipse font-sansation">
    <div class="text-white uppercase absolute mt-6 flex right-14">
        @auth
-           <a href="{{ route('home', app()->getLocale()) }}" class="mx-6">{{ __('Home page')  }}</a>
-           <a href="{{ route('movies.index', app()->getLocale()) }}">{{ __('See All Movies') }}</a>
+           <a href="{{ route('home', app()->getLocale()) }}" class="mx-6">{{ __('text.home_page')  }}</a>
+           <a href="{{ route('movies.index', app()->getLocale()) }}">{{ __('text.see_all_movies') }}</a>
  
  
-           <form method="POST" action="{{ route('signout', app()->getLocale()) }}"
+           <form method="POST" action="{{ route('logout', app()->getLocale()) }}"
             class="font-semibold text-blue-50 ml-6">
                @csrf
-               <button type="submit">{{ __('Sign Out') }}</button>
+               <button type="submit">{{ __('text.sign_out') }}</button>
            </form>
  
        @else
-           <a href="{{ route('signin', app()->getLocale()) }}" class="ml-6 text-white uppercase">{{ __('Sign In') }}</a>
+           <a href="{{ route('login', app()->getLocale()) }}" class="ml-6 text-white uppercase">{{ __('text.sign_in') }}</a>
        @endauth
    </div>
  

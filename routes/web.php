@@ -2,26 +2,26 @@
 
 use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\AdminQuoteController;
-use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function () {
-	Route::get('/', [MoviesController::class, 'index'])->name('home');
-	Route::get('movie/{movie:id}', [MoviesController::class, 'show'])->name('movie.id');
+	Route::get('/', [MovieController::class, 'index'])->name('home');
+	Route::get('movie/{movie:id}', [MovieController::class, 'show'])->name('movie.id');
 
-	Route::get('signin', [SessionsController::class, 'create'])->name('signin')->middleware('guest');
-	Route::post('signin', [SessionsController::class, 'store'])->name('signin.post')->middleware('guest');
+	Route::view('login', 'sessions.login')->name('login')->middleware('guest');
+	Route::post('login', [SessionsController::class, 'store'])->name('login.post')->middleware('guest');
 
-	Route::post('signout', [SessionsController::class, 'destroy'])->name('signout')->middleware('auth');
+	Route::post('logout', [SessionsController::class, 'destroy'])->name('logout')->middleware('auth');
 });
 
 // Admnin
 
-Route::group(['prefix' => '{language}/admin', 'middleware' => 'admin'], function () {
-	Route::get('movies/create', [AdminMovieController::class, 'create'])->name('create.movie');
+Route::group(['prefix' => '{language}/admin', 'middleware' => 'auth'], function () {
+	Route::view('movies/create', 'admin.movies.create')->name('create.movie');
 	Route::post('/movies', [AdminMovieController::class, 'store'])->name('movies.store');
 
 	Route::get('movies', [AdminMovieController::class, 'index'])->name('movies.index');

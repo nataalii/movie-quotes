@@ -3,44 +3,39 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Movies\StoreMoviesRequest;
-use App\Models\Movies;
+use App\Models\Movie;
 
 class AdminMovieController extends Controller
 {
 	public function index()
 	{
 		return view('admin.movies.all-movies', [
-			'movie' => Movies::all(),
+			'movie' => Movie::all(),
 		]);
-	}
-
-	public function create()
-	{
-		return view('admin.movies.create');
 	}
 
 	public function store(StoreMoviesRequest $request)
 	{
 		$attributes = $request->validated();
 
-		Movies::create([
+		Movie::create([
 			'title' => [
 				'en' => $attributes['title_en'],
 				'ka' => $attributes['title_ka'],
 			],
 		]);
 
-		return redirect()->route('movies.index', app()->getLocale())->with('success', __('Movie Added!'));
+		return redirect()->route('movies.index', app()->getLocale())->with('success', __('text.movie_added!'));
 	}
 
-	public function edit($local, Movies $movie)
+	public function edit($local, Movie $movie)
 	{
 		return view('admin.movies.edit', [
 			'movie' => $movie,
 		]);
 	}
 
-	public function update($local, Movies $movie, StoreMoviesRequest $request)
+	public function update($local, Movie $movie, StoreMoviesRequest $request)
 	{
 		$attributes = $request->validated();
 
@@ -51,13 +46,13 @@ class AdminMovieController extends Controller
 			],
 		]);
 
-		return redirect()->route('movies.index', app()->getLocale())->with('success', __('Movie Updated!'));
+		return redirect()->route('movies.index', app()->getLocale())->with('success', __('text.movie_updated!'));
 	}
 
-	public function destroy($local, Movies $movie)
+	public function destroy($local, Movie $movie)
 	{
 		$movie->delete();
 
-		return back()->with('success', __('Movie Deleted!'));
+		return back()->with('success', __('text.movie_deleted!'));
 	}
 }

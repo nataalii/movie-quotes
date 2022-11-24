@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Quotes extends Model
+class Quote extends Model
 {
 	use HasFactory;
 
@@ -18,6 +18,6 @@ class Quotes extends Model
 
 	public function movie()
 	{
-		return $this->belongsTo(Movies::class);
+		return $this->belongsTo(Movie::class);
 	}
 }

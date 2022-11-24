@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Movies;
-use App\Models\Quotes;
+use App\Models\Movie;
+use App\Models\Quote;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,35 +17,35 @@ class DatabaseSeeder extends Seeder
 	 */
 	public function run()
 	{
-		$movie1 = Movies::create([
+		$movie1 = Movie::create([
 			'title' => [
 				'en' => 'Inception',
 				'ka' => 'დასაწყისი',
 			],
 		]);
 
-		$movie2 = Movies::create([
+		$movie2 = Movie::create([
 			'title' => [
 				'en' => 'Guardians of the Galaxy',
 				'ka' => 'გალაკტიკის მცველები',
 			],
 		]);
 
-		$movie3 = Movies::create([
+		$movie3 = Movie::create([
 			'title' => [
 				'en' => 'Interstellar',
 				'ka' => 'ინტერსტელარი',
 			],
 		]);
 
-		$movie4 = Movies::create([
+		$movie4 = Movie::create([
 			'title' => [
 				'en' => 'Fight Club',
 				'ka' => 'მებრძოლთა კლუბი',
 			],
 		]);
 
-		Quotes::create([
+		Quote::create([
 			'image'    => 'images/Inception_1658036420.jpg',
 			'movie_id' => $movie1->id,
 			'quote'    => [
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quotes::create([
+		Quote::create([
 			'image'    => 'images/inception.jpg',
 			'movie_id' => $movie1->id,
 			'quote'    => [
@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quotes::create([
+		Quote::create([
 			'image'    => 'images/baby-groot.jpg',
 			'movie_id' => $movie2->id,
 			'quote'    => [
@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quotes::create([
+		Quote::create([
 			'image'    => 'images/guardians.jpg',
 			'movie_id' => $movie2->id,
 			'quote'    => [
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quotes::create([
+		Quote::create([
 			'image'    => 'images/interstellar.jpeg',
 			'movie_id' => $movie3->id,
 			'quote'    => [
@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quotes::create([
+		Quote::create([
 			'image'    => 'images/interstellar-2.jpg',
 			'movie_id' => $movie3->id,
 			'quote'    => [
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quotes::create([
+		Quote::create([
 			'image'    => 'images/fight-club.jpg',
 			'movie_id' => $movie4->id,
 			'quote'    => [
