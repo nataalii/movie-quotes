@@ -33,7 +33,7 @@
                         <form action="{{ route('delete.movie', [app()->getLocale(), $each->id])}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="text-red-600 hover:text-indigo-900 pt-3">{{ __('text.delete') }}</button>
+                            <button class="text-red-600 hover:text-indigo-900 pt-3 " onclick="return confirm('Are you sure?')">{{ __('text.delete') }}</button>
                         </form>
                       </td>
                   </tr>
