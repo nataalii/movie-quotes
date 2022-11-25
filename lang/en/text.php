@@ -5,6 +5,7 @@ return [
 	'add_movie'                             => 'Add Movie',
 	'welcome'                               => 'Welcome',
 	'see_all_movies'                        => 'See All Movies',
+	'see_all_quotes'                        => 'See All Quotes',
 	'sign_out'                              => 'Sign Out',
 	'sign_in'                               => 'Sign in',
 	'en'                                    => 'en',

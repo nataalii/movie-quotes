@@ -14,7 +14,7 @@
    <div class="text-white uppercase absolute mt-6 flex right-14">
        @auth
            <a href="{{ route('home', app()->getLocale()) }}" class="mx-6">{{ __('text.home_page')  }}</a>
-           <a href="{{ route('movies.index', app()->getLocale()) }}">{{ __('text.see_all_movies') }}</a>
+           <a href="{{ route('quotes.all', app()->getLocale()) }}">{{ __('text.see_all_quotes') }}</a>
  
  
            <form method="POST" action="{{ route('logout', app()->getLocale()) }}"

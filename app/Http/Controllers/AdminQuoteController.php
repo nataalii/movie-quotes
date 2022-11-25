@@ -40,6 +40,13 @@ class AdminQuoteController extends Controller
 		]);
 	}
 
+	public function showAll($local)
+	{
+		return view('admin.quotes.all-quotes', [
+			'quotes' => Quote::all(),
+		]);
+	}
+
 	public function edit($local, Quote $quote)
 	{
 		return view('admin.quotes.edit', [
