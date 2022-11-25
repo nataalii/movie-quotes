@@ -27,7 +27,7 @@ class CreateUser extends Command
 
 		$user->name = $this->ask('Enter your name: ');
 		$user->email = $this->ask('Enter your email:');
-		$user->password = bcrypt($this->ask('Enter your password: '));
+		$user->password = bcrypt($this->secret('Enter your password: '));
 
 		$user->save();
 
