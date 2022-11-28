@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Database\Seeder;
+use Illuminate\Http\UploadedFile;
 
 class DatabaseSeeder extends Seeder
 {
@@ -45,17 +46,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quote::create([
-			'image'    => 'images/Inception_1658036420.jpg',
-			'movie_id' => $movie1->id,
-			'quote'    => [
-				'en' => "You mustn't be afraid to dream big",
-				'ka' => 'არ გეშინოდეს დიდი ოცნებების',
-			],
-		]);
-
-		Quote::create([
-			'image'    => 'images/inception.jpg',
+		Quote::factory()->create([
 			'movie_id' => $movie1->id,
 			'quote'    => [
 				'en' => 'you don’t believe in one reality',
@@ -63,8 +54,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quote::create([
-			'image'    => 'images/baby-groot.jpg',
+		Quote::factory()->create([
 			'movie_id' => $movie2->id,
 			'quote'    => [
 				'en' => 'I am Groot.',
@@ -72,8 +62,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quote::create([
-			'image'    => 'images/guardians.jpg',
+		Quote::factory()->create([
 			'movie_id' => $movie2->id,
 			'quote'    => [
 				'en' => 'I don’t learn. One of my issues.',
@@ -81,8 +70,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quote::create([
-			'image'    => 'images/interstellar.jpeg',
+		Quote::factory()->create([
 			'movie_id' => $movie3->id,
 			'quote'    => [
 				'en' => 'I have an itch, heading back to base',
@@ -90,8 +78,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quote::create([
-			'image'    => 'images/interstellar-2.jpg',
+		Quote::factory()->create([
 			'movie_id' => $movie3->id,
 			'quote'    => [
 				'en' => 'Love transcends time and space',
@@ -99,12 +86,24 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		Quote::create([
-			'image'    => 'images/fight-club.jpg',
+		Quote::factory()->create([
 			'movie_id' => $movie4->id,
 			'quote'    => [
 				'en' => 'Without pain, we would have nothing',
 				'ka' => 'ტკივილის გარეშე არაფერი გვექნებოდა',
+			],
+		]);
+
+		// Quote::factory(2)->create([
+		// 	'image' => UploadedFile::fake()->image(uniqid() . '.jpg')->store('images'),
+		// ]);
+
+		Quote::factory(2)->create([
+			// 'image'    => UploadedFile::fake()->image('nanana', 700, 300)->store('images'),
+			'movie_id' => $movie1->id,
+			'quote'    => [
+				'en' => "You mustn't be afraid to dream big",
+				'ka' => 'არ გეშინოდეს დიდი ოცნებების',
 			],
 		]);
 	}
