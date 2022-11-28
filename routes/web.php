@@ -32,6 +32,7 @@ Route::group(['prefix' => '{language}/admin', 'middleware' => 'auth'], function 
 	Route::get('quotes/create', [AdminQuoteController::class, 'create'])->name('create.quote');
 	Route::get('quotes', [AdminQuoteController::class, 'index'])->name('quotes.index');
 	Route::post('quotes', [AdminQuoteController::class, 'store'])->name('quotes.store');
+	Route::get('quotes/all', [AdminQuoteController::class, 'showAll'])->name('quotes.all');
 
 	Route::get('movie/{movie:id}', [AdminQuoteController::class, 'show'])->name('movie.quotes');
 	Route::get('quotes/{quote}/edit', [AdminQuoteController::class, 'edit'])->name('edit.quote');

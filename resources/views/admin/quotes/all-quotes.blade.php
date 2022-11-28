@@ -1,13 +1,13 @@
 @extends('components.layout')
 @section('slot')
-<x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en', $movie->id]) }}"
-  georgian="{{ route(Route::currentRouteName(),[ 'ka', $movie->id])}}"/>
+<x-lan-buttons english="{{ route(Route::currentRouteName(),[ 'en']) }}"
+  georgian="{{ route(Route::currentRouteName(),[ 'ka'])}}"/>
 
   <x-dashboard>
     <div class="sm:px-6 lg:px-8 absolute p-16 w-7/12 -mx-16">
       <div class="sm:flex sm:items-center">
         <div class="sm:flex-auto">
-          <p class="mt-4 text-sm text-white">{{ __('text.quote_list') }} "{{ $movie->title }}"</p>
+          <p class="mt-4 text-sm text-white">{{ __('text.all_quotes') }} </p>
         </div>
       </div>
       <div class="mt-8 flex flex-col">
@@ -25,7 +25,7 @@
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 bg-white">
-                  @foreach ($movie->quote as $quote)
+                  @foreach ($quotes as $quote)
                        <tr>
                       <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                         <div class="flex items-center">
