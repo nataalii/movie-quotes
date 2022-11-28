@@ -7,7 +7,6 @@ namespace Database\Seeders;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Database\Seeder;
-use Illuminate\Http\UploadedFile;
 
 class DatabaseSeeder extends Seeder
 {
@@ -94,12 +93,7 @@ class DatabaseSeeder extends Seeder
 			],
 		]);
 
-		// Quote::factory(2)->create([
-		// 	'image' => UploadedFile::fake()->image(uniqid() . '.jpg')->store('images'),
-		// ]);
-
-		Quote::factory(2)->create([
-			// 'image'    => UploadedFile::fake()->image('nanana', 700, 300)->store('images'),
+		Quote::factory()->create([
 			'movie_id' => $movie1->id,
 			'quote'    => [
 				'en' => "You mustn't be afraid to dream big",
