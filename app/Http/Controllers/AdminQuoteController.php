@@ -61,7 +61,9 @@ class AdminQuoteController extends Controller
 
 		if (isset($validated['image']))
 		{
-			$validated['image'] = request()->file('image');
+			$quote->update([
+				'image' => $request->file('image')->store('images'),
+			]);
 		}
 
 		$quote->update([
@@ -69,7 +71,6 @@ class AdminQuoteController extends Controller
 				'en' => $validated['quote_en'],
 				'ka' => $validated['quote_ka'],
 			],
-			'image'    => $request->file('image')->store('images'),
 			'movie_id' => $validated['movie_id'],
 		]);
 
