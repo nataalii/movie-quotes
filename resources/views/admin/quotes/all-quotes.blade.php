@@ -30,7 +30,11 @@
                       <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                         <div class="flex items-center">
                           <div class="h-28 w-48">
-                            <img class=" h-24 w-36 rounded-lg object-cover" src="/{{ $quote->image }}" alt="">
+                            @if (substr($quote->image, 0, 5) == 'https')
+                                  <img src="{{asset($quote->image )}}"  alt="movie-image" class="h-24 w-36 rounded-lg object-cover" >
+                            @else
+                                <img src="{{asset('storage/' . $quote->image) }}"  alt="movie-image" class="h-24 w-36 rounded-lg object-cover" >
+                            @endif                       
                           </div>
                           <div class="ml-4">
                             <div class=" text-2xl text-gray-900">"{{ $quote->quote }}"</div>

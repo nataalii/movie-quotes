@@ -26,6 +26,7 @@ return [
 	'movie_list'                            => 'A list of all the Movies',
 	'Title'                                 => 'Title',
 	'quote_list'                            => 'A list of all the quotes from',
+	'all_quotes'                            => 'All quotes',
 	'edit_a_movie'                          => 'Edit a movie',
 	'add_a_movie'                           => 'Add a movie',
 	'edit_quote'                            => 'Edit Quote',
