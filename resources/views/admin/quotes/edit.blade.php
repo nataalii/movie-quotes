@@ -36,9 +36,9 @@
                     <input id="image" name="image" type="file" >
                   </label>
                   @if (substr($quote->image, 0, 5) == 'https')
-                      <img src="{{asset($quote->image )}}"  alt="movie-image" class="rounded-lg object-cover" width="150"  >
+                      <img src="{{asset($quote->image )}}"  alt="movie-image" class="rounded-lg object-cover h-24 w-36"  >
                   @else
-                      <img src="{{asset('storage/' . $quote->image) }}"  alt="movie-image" class="rounded-lg object-cover"  width="150" >
+                      <img src="{{asset('storage/' . $quote->image) }}"  alt="movie-image" class="rounded-lg object-cover h-24 w-36" >
                   @endif                  
                 </div>
                 <x-error name="image"/>
