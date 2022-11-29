@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"  class="h-full bg-gray-300">
-<link rel="icon" type="image/x-icon" href="/images/favicon.png">
-<title>Sign In</title>
+  <link rel="icon" type="image/png" href="{{asset('storage/' . 'images/cinema-favicon.png') }}">
+  <title>Sign In</title>
 @vite('resources/css/app.css')
  
 <body class="h-full">
