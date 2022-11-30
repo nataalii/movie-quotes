@@ -17,8 +17,8 @@ class SessionsController extends Controller
 		}
 
 		throw ValidationException::withMessages([
-			'email'    => __('Enter Valid Email'),
-			'password' => __('Enter Valid Password'),
+			'email'    => __('text.valid_email'),
+			'password' => __('text.valid_password'),
 		]);
 	}
 
